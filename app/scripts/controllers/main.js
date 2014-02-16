@@ -2,6 +2,8 @@
 
 angular.module('sensorApp')
   .controller('MainCtrl', function ($scope) {
+    $scope.measureTypes = ['TEMP', 'HUM'];
+    $scope.measureType = 'TEMP';
     $scope.graphConfig = {
       title: 'Measurements',
       seriesDefaults: {
@@ -9,7 +11,7 @@ angular.module('sensorApp')
       },
       axes: {
         xaxis: {
-          renderer: $.jqplot.DateAxisRenderer,
+          renderer: jQuery.jqplot.DateAxisRenderer,
         },
         yaxis: {
           tickOptions: {
@@ -21,12 +23,20 @@ angular.module('sensorApp')
     $scope.graphData = [[
       ['2014-02-16 00:01:00', 1],
       ['2014-02-16 00:02:00', 3],
-      ['2014-02-16 00:03:00', 2],
-      ['2014-02-16 00:04:00', 3],
-      ['2014-02-16 00:05:00', 10],
-      ['2014-02-16 00:06:00', 9],
+      ['2014-02-16 00:03:00', 1],
+      ['2014-02-16 00:04:00', 2],
+      ['2014-02-16 00:05:00', 1],
+      ['2014-02-16 00:06:00', 4],
+      ['2014-02-16 00:07:00', 2],
+      ['2014-02-16 00:08:00', 3],
+      ['2014-02-16 00:09:00', 10],
+      ['2014-02-16 00:10:00', 9],
     ]];
     
     $scope.chartType = 'line';
+
+    $scope.endDate = moment().toDate(); 
+    $scope.startDate = moment().subtract('days', 2).toDate();
   }
+  
 );

@@ -8,7 +8,29 @@
 </div>
 
 <div ng-controller="MainCtrl">
-  <div ui-chart="graphData" chart-options="graphConfig"></div> 
+  Measurement: <select ng-model="measureType" ng-options="m for m in measureTypes"></select><br/>
+  Date Range: <br/>
+  <input 
+    type="text" 
+    date-time="" 
+    ng-model="startDate" 
+    required="true" 
+    view="date" 
+    min-view="hours"
+    format="dd.MM.yyyy hh:mm"
+    class="ng-scope ng-pristine ng-invalid ng-invalid-required"/>
+  <br/>
+  <input 
+    type="text" 
+    date-time="" 
+    ng-model="endDate" 
+    required="true" 
+    view="date" 
+    min-view="hours"  
+    format="dd.MM.yyyy hh:mm"
+    class="ng-scope ng-pristine ng-invalid ng-invalid-required"/>
+  <br/>
+  <div ui-chart="graphData" chart-options="graphConfig" style="height: 600px"></div>
 </div>
 <div class="footer">
   <p>Sensor Network Monitor</p>

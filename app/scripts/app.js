@@ -5,7 +5,9 @@ angular.module('sensorApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.chart'
+  'ui.chart',
+  'datePicker',
+  'angularMoment'
 ])
   .config(function ($routeProvider) {
     $routeProvider
