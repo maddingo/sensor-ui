@@ -4,7 +4,8 @@ angular.module('sensorApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ui.chart'
 ])
   .config(function ($routeProvider) {
     $routeProvider
