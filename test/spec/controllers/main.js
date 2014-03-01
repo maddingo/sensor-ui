@@ -17,6 +17,8 @@ describe('Controller: MainCtrl', function () {
   }));
 
   it('should attach a list of graphData to the scope', function () {
-    expect(scope.graphData.length).toBeGreaterThan(3);
+    expect(scope.graphData).toBeDefined();
+    expect(scope.graphData.length).toBeGreaterThan(0);
+    expect(scope.graphData[0].length).toBeGreaterThan(3);
   });
 });
